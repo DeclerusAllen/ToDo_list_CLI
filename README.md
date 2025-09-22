@@ -40,7 +40,7 @@ Installation
 
 Cloner le repository :
 
-git clone https://github.com/votre-utilisateur/todolist-cli.git
+git clone https://github.com/DeclerusAllen/ToDo_list_CLI.git
 cd todolist-cli
 
 
