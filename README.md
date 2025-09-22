@@ -1,132 +1,169 @@
-# ToDo_list_CLI
-Une application en ligne de commande pour gérer vos tâches avec authentification utilisateur.
-Écrit en Python avec typer et rich pour une interface simple et agréable.
+# 📝 Todolist CLI
 
-Fonctionnalités principales
+Une application en ligne de commande (CLI) pour gérer vos tâches avec **authentification utilisateur**.  
+Développée en **Python** avec [Typer](https://typer.tiangolo.com/) et [Rich](https://rich.readthedocs.io/) pour une expérience simple et agréable.  
 
-Gestion des utilisateurs
+---
 
-Créer un compte (register)
+## ✨ Fonctionnalités
 
-Se connecter (login) et se déconnecter (logout)
+### 🔐 Gestion des utilisateurs
+- Créer un compte (**register**)  
+- Se connecter (**login**)  
+- Se déconnecter (**logout**)  
+- Vérification stricte des entrées  
 
-Vérification stricte des entrées
+### ✅ Gestion des tâches
+- Ajouter une tâche (titre, description multi-lignes, date/heure)  
+- Lister toutes les tâches de l’utilisateur connecté  
+- Modifier une tâche existante  
+- Supprimer une tâche (avec confirmation)  
+- Marquer une tâche comme terminée  
+- Rechercher des tâches par **ID, titre ou date**  
+- Contrôle strict des entrées et confirmation avant modification/suppression  
 
-Gestion des tâches
+### 🎨 Interface CLI conviviale
+- Commandes gérées avec **Typer**  
+- Affichage clair et coloré avec **Rich.Table**  
+- IDs affichés à partir de `1` pour plus de lisibilité  
 
-Ajouter des tâches avec titre, description multi-lignes et date/heure
+---
 
-Lister toutes les tâches de l’utilisateur connecté
+## ⚙️ Installation
 
-Modifier une tâche existante
-
-Supprimer une tâche avec confirmation
-
-Marquer une tâche comme terminée
-
-Rechercher des tâches par ID, titre ou date
-
-Contrôle strict des entrées et confirmation avant toute modification/suppression
-
-Conception CLI conviviale
-
-Utilisation de typer pour les commandes
-
-Affichage agréable avec rich.Table
-
-IDs affichés à partir de 1 pour plus de lisibilité
-
-Installation
-
-Cloner le repository :
-
-git clone https://github.com/DeclerusAllen/ToDo_list_CLI.git
+Cloner le repository :  
+```bash
+git clone https://github.com/votre-utilisateur/todolist-cli.git
 cd todolist-cli
+```
 
-
-Créer un environnement virtuel :
-
+Créer un environnement virtuel :  
+```bash
 python -m venv venv
+```
 
+Activer l’environnement :  
 
-Activer l'environnement :
-
-Windows :
-
+**Windows** :  
+```bash
 venv\Scripts\activate
+```
 
-
-macOS / Linux :
-
+**macOS / Linux** :  
+```bash
 source venv/bin/activate
+```
 
-
-Installer les dépendances :
-
+Installer les dépendances :  
+```bash
 pip install typer rich
+```
 
-Commandes principales
-Authentification
+---
 
-Créer un compte :
+## 🚀 Commandes principales
 
+### 🔐 Authentification
+Créer un compte :  
+```bash
 python todo.py auth register
+```
 
-
-Se connecter :
-
+Se connecter :  
+```bash
 python todo.py auth login
+```
 
-
-Se déconnecter :
-
+Se déconnecter :  
+```bash
 python todo.py auth logout
+```
 
-Gestion des tâches (après connexion)
-
-Ajouter une tâche :
-
+### ✅ Gestion des tâches (après connexion)
+Ajouter une tâche :  
+```bash
 python todo.py tasks add
+```
 
-
-Lister toutes les tâches :
-
+Lister toutes les tâches :  
+```bash
 python todo.py tasks list
+```
 
-
-Modifier une tâche :
-
+Modifier une tâche :  
+```bash
 python todo.py tasks edit
+```
 
-
-Supprimer une tâche :
-
+Supprimer une tâche :  
+```bash
 python todo.py tasks delete
+```
 
-
-Marquer une tâche comme terminée :
-
+Marquer une tâche comme terminée :  
+```bash
 python todo.py tasks done
+```
 
-
-Rechercher des tâches :
-
+Rechercher une tâche :  
+```bash
 python todo.py tasks search
+```
 
+---
+
+## 🖥️ Exemple d’utilisation
+
+```bash
 # Créer un compte
 python todo.py auth register
+
 # Connexion
 python todo.py auth login
+
 # Ajouter une tâche
 python todo.py tasks add
+
 # Lister les tâches
 python todo.py tasks list
+
 # Modifier une tâche
 python todo.py tasks edit
+
 # Supprimer une tâche
 python todo.py tasks delete
+
 # Marquer comme faite
 python todo.py tasks done
-# Rechercher
-python todo.py tasks search
 
+# Rechercher une tâche
+python todo.py tasks search
+```
+
+---
+
+## 📂 Structure du projet
+
+```
+Todolist/
+│
+├─ todo.py        # Fichier principal avec toutes les commandes
+├─ users.json     # Stockage des utilisateurs
+├─ tasks.json     # Stockage des tâches par utilisateur
+├─ session.json   # Session pour maintenir la connexion
+└─ README.md      # Documentation du projet
+```
+
+---
+
+## 🛠️ Technologies utilisées
+- **Python 3.x**  
+- [Typer](https://typer.tiangolo.com/) → CLI moderne et simple  
+- [Rich](https://rich.readthedocs.io/) → Affichage coloré et tableaux  
+
+---
+
+📌 **Remarques**  
+- Les IDs affichés commencent à `1` pour plus de lisibilité.  
+- Toutes les actions critiques (**modification, suppression**) nécessitent une confirmation.  
+- Les champs obligatoires sont strictement contrôlés pour éviter les erreurs.  
